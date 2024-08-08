@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emmet 문법</title>
+</head>
+<body>
+    <!-- cheatsheet -->
+    <!-- https://docs.emmet.io/cheat-sheet/ -->
+
+    h1{hello}*3
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+
+    table>tr>td
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    p+p+p
+    <p></p>
+    <p></p>
+    <p></p>
+
+    table>(tr>th{hello}*3)+(tr>td{world}*3)*3
+    <table>
+        <tr>
+            <th>hello</th>
+            <th>hello</th>
+            <th>hello</th>
+        </tr>
+        <tr>
+            <td>world</td>
+            <td>world</td>
+            <td>world</td>
+        </tr>
+        <!-- 중략 -->
+    </table>
+
+    h${hello}*6
+    <h1>hello</h1>
+    <h2>hello</h2>
+    <h3>hello</h3>
+    <h4>hello</h4>
+    <h5>hello</h5>
+    <h6>hello</h6>
+
+    h2{hello$}*6
+    <h2>hello1</h2>
+    <h2>hello2</h2>
+    <h2>hello3</h2>
+    <h2>hello4</h2>
+    <h2>hello5</h2>
+    <h2>hello6</h2>
+
+    .hello
+    <div class="hello"></div>
+
+    #hello
+    <div id="hello"></div>
+
+    
+</body>
+</html>
