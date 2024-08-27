@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --translateZ: calc((600px * 5) / 3.14 / 2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: translate(-50%, -50%) rotateY(1turn);
+            }
+        }
+
+        div {
+            height: 100vh;
+            perspective: 1200px;
+        }
+
+        .list-item {
+            position: relative;
+            width: 600px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            animation: rotate 8s infinite linear;
+        }
+
+        .list-item li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+        }
+
+        li img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        li:nth-child(1) {
+            transform: rotateY(0) translateZ(var(--translateZ));
+        }
+
+        li:nth-child(2) {
+            transform: rotateY(calc(360deg / 5)) translateZ(var(--translateZ));
+        }
+
+        li:nth-child(3) {
+            transform: rotateY(calc((360deg / 5) * 2)) translateZ(var(--translateZ));
+        }
+
+        li:nth-child(4) {
+            transform: rotateY(calc((360deg / 5) * 3)) translateZ(var(--translateZ));
+        }
+
+        li:nth-child(5) {
+            transform: rotateY(calc((360deg / 5) * 4)) translateZ(var(--translateZ));
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="list-item">
+            <li><img src="./src/nezuko.png" alt="네즈코"></li>
+            <li><img src="./src/shinobu.png" alt="시노부"></li>
+            <li><img src="./src/tanjiro.png" alt="탄지로"></li>
+            <li><img src="./src/tengen.png" alt="텐겐"></li>
+            <li><img src="./src/renkoku.png" alt="렌고쿠"></li>
+        </ul>
+    </div>
+</body>
+</html>
