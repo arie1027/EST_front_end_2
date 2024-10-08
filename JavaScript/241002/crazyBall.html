@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 클래스를 이용해 공 객체를 생성해봅시다!
+        class Ball {
+            constructor(xPos, yPos, xSpeed, ySpeed) {
+                this.xPos = xPos;
+                this.yPos = yPos;
+                this.xSpeed = xSpeed;
+                this.ySpeed = ySpeed;
+                this.radius = 30;
+            }
+
+            setupBall() {
+                this.drawBall();
+                this.moveBall();
+                this.collisionBall();
+            }
+
+            drawBall() {
+                ctx.beginPath();
+                ctx.arc(this.xPos, this.yPos, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'teal';
+                ctx.fill();
+            }
+
+            moveBall() {
+                this.xPos += this.xSpeed;
+                this.yPos += this.ySpeed;
+            }
+
+            collisionBall() {
+                // 공의 x 축의 위치가 0보다 작거나, 500보다 크다면 역방향으로
+                if (this.xPos - this.radius < 0 || this.xPos + this.radius > 500) {
+                    this.xSpeed = -this.xSpeed;
+                }
+
+                // 공의 y 축의 위치가 0보다 작거나, 500보다 크다면 역방향으로
+                if (this.yPos - this.radius < 0 || this.yPos + this.radius > 500) {
+                    this.ySpeed = -this.ySpeed;
+                }
+            }
+
+        }
+
+        const ball1 = new Ball(100, 100, 2, 2);
+
+
+        const ball2 = new Ball(200, 200, 3, 1);
+
+
+        const ball3 = new Ball(100, 300, 1, 4);
+
+
+
+        function play() {
+            ctx.clearRect(0, 0, 500, 500);
+
+            ball1.setupBall();
+            ball2.setupBall();
+            ball3.setupBall();
+
+            // ball1.moveBall();
+            // ball1.collisionBall();
+
+            // ball2.drawBall();
+            // ball2.moveBall();
+            // ball2.collisionBall();
+
+            // ball3.drawBall();
+            // ball3.moveBall();
+            // ball3.collisionBall();
+
+            requestAnimationFrame(play);
+        }
+
+        requestAnimationFrame(play);
+    </script>
+</body>
+
+</html>
