@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 
-const CardDiv = styled.div`
+const CardDiv = styled.div` //eslint-disable-line no-unused-vars
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
