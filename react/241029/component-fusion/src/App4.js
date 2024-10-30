@@ -37,17 +37,17 @@ function App() {
 }
 
 
-function ProductList() {
+function ProductList() { // eslint-disable-line no-unused-vars
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const category = searchParams.get('category');
-    const sort = searchParams.get('sort');
+    const category = searchParams.get('category'); // eslint-disable-line no-unused-vars
+    const sort = searchParams.get('sort'); // eslint-disable-line no-unused-vars
     // ...
 }
 
-function ProductDetails() {
+function ProductDetails() { // eslint-disable-line no-unused-vars
     const location = useLocation();
-    const { productId, fromPage, lastScrollPosition } = location.state || {};
+    const { productId, fromPage, lastScrollPosition } = location.state || {}; // eslint-disable-line no-unused-vars
 
 
     return (
