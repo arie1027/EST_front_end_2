@@ -35,7 +35,7 @@ function Two() {
   return <h1>hello world2</h1>
 }
 
-function Three() {
+function Three() { //eslint-disable-line no-unused-vars
   return <h1>hello world3</h1>
 }
 
